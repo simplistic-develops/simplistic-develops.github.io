@@ -4,118 +4,26 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Simplistic Develops</title>
-<style>
-  :root {
-    --bg: #f5f6fa;
-    --surface: #ffffff;
-    --text: #16181d;
-    --muted: #5b6272;
-    --border: #e6e8ee;
-    --accent-1: #6a5cff;
-    --accent-2: #00c2b2;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #0f1115;
-      --surface: #1a1d24;
-      --text: #f2f3f5;
-      --muted: #9aa0ac;
-      --border: #2a2e37;
-    }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-  }
-  .hero {
-    padding: 5rem 1.5rem 4rem;
-    text-align: center;
-    background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
-    color: #fff;
-  }
-  .hero h1 {
-    margin: 0 0 0.5rem;
-    font-size: clamp(2rem, 5vw, 2.75rem);
-    font-weight: 700;
-    letter-spacing: -0.02em;
-  }
-  .hero p {
-    margin: 0 auto;
-    max-width: 32rem;
-    font-size: 1.1rem;
-    opacity: 0.92;
-  }
-  main {
-    max-width: 640px;
-    margin: -2.5rem auto 0;
-    padding: 0 1.5rem 4rem;
-  }
-  .card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 1.5rem 1.75rem;
-    margin-bottom: 1.25rem;
-    box-shadow: 0 12px 32px -16px rgba(20, 20, 40, 0.25);
-  }
-  .card h2 {
-    margin: 0 0 0.25rem;
-    font-size: 1.25rem;
-  }
-  .card p.desc {
-    margin: 0 0 1rem;
-    color: var(--muted);
-    font-size: 0.95rem;
-  }
-  .links {
-    display: flex;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-  }
-  .links a {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--accent-1);
-    text-decoration: none;
-    padding: 0.4rem 0.9rem;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    transition: background 0.15s ease;
-  }
-  .links a:hover {
-    background: var(--border);
-  }
-  footer {
-    text-align: center;
-    color: var(--muted);
-    font-size: 0.85rem;
-    padding-bottom: 2rem;
-  }
-  footer a {
-    color: inherit;
-  }
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="hero">
   <h1>Simplistic Develops</h1>
   <p>Small, focused apps built to do one thing well.</p>
 </div>
-<main>
+<main class="with-hero">
   <div class="card">
     <h2>OnTop</h2>
     <p class="desc">A recurring maintenance tracker for your vehicles and properties.</p>
     <div class="links">
-      <a href="/ontop/privacy.html">Privacy Policy</a>
-      <a href="/ontop/terms.html">Terms of Service</a>
+      <a href="ontop/privacy.html">Privacy Policy</a>
+      <a href="ontop/terms.html">Terms of Service</a>
     </div>
   </div>
 </main>
-<footer>
-  <p>Contact: <a href="mailto:simplistic.develops@gmail.com">simplistic.develops@gmail.com</a></p>
+<footer class="site-footer">
+  <p><a href="mailto:simplistic.develops@gmail.com">simplistic.develops@gmail.com</a></p>
+  <p class="copyright">&copy; 2026 James Truitt, d/b/a Simplistic Develops</p>
 </footer>
 </body>
 </html>
