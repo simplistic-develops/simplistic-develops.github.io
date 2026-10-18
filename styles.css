@@ -1,185 +1,142 @@
+/* Simplistic Develops — builder's notebook.
+   No outside fonts, scripts or trackers: everything here is system fonts and this file. */
 :root {
-  --bg: #f5f6fa;
-  --surface: #ffffff;
-  --text: #16181d;
-  --muted: #5b6272;
-  --border: #e6e8ee;
-  --accent-1: #6a5cff;
-  --accent-2: #00c2b2;
+  --paper: #f6f2e9;
+  --surface: #fffdf8;
+  --ink: #1d232b;
+  --muted: #5d6470;
+  --rule: #e2dccd;
+  --grid: rgba(20, 54, 92, 0.07);
+  --blueprint: #14365c;
+  --keystone: #c96f1e;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #0f1115;
-    --surface: #1a1d24;
-    --text: #f2f3f5;
-    --muted: #9aa0ac;
-    --border: #2a2e37;
+    --paper: #0f1a27;
+    --surface: #152334;
+    --ink: #ece7dc;
+    --muted: #a3abb6;
+    --rule: #26384d;
+    --grid: rgba(160, 196, 236, 0.07);
+    --blueprint: #9cc3ec;
+    --keystone: #eb9a4b;
   }
 }
 * { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-}
-a { color: var(--accent-1); }
-
-/* --- Homepage hero --- */
-.hero {
-  padding: 5rem 1.5rem 4rem;
-  text-align: center;
-  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
-  color: #fff;
-}
-.hero h1 {
-  margin: 0 0 0.5rem;
-  font-size: clamp(2rem, 5vw, 2.75rem);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-.hero p {
-  margin: 0 auto;
-  max-width: 32rem;
-  font-size: 1.1rem;
-  opacity: 0.92;
-}
-
-/* --- Subpage header (privacy / terms) --- */
-.subheader {
-  padding: 1.5rem;
-  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-.subheader .home-link {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  opacity: 0.95;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-.subheader .home-link:hover { opacity: 1; text-decoration: underline; }
-.subheader nav {
-  display: flex;
-  gap: 0.5rem;
-}
-.subheader nav a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 600;
-  padding: 0.35rem 0.85rem;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.5);
-  transition: background 0.15s ease;
-}
-.subheader nav a:hover { background: rgba(255,255,255,0.15); }
-.subheader nav a[aria-current="page"] {
-  background: rgba(255,255,255,0.22);
-  border-color: rgba(255,255,255,0.85);
-}
-
-/* --- Shared containers --- */
-main {
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 0 1.5rem 4rem;
-}
-main.with-hero { margin-top: -2.5rem; }
-main.with-subheader { margin-top: 2.5rem; }
-
-.card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 1.5rem 1.75rem;
-  margin-bottom: 1.25rem;
-  box-shadow: 0 12px 32px -16px rgba(20, 20, 40, 0.25);
-}
-.card h2 {
-  margin: 0 0 0.25rem;
-  font-size: 1.25rem;
-}
-.card p.desc {
-  margin: 0 0 1rem;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-.links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-.links a {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--accent-1);
-  text-decoration: none;
-  padding: 0.4rem 0.9rem;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  transition: background 0.15s ease;
-}
-.links a:hover { background: var(--border); }
-
-/* --- Legal document content --- */
-.legal-card h1 {
-  margin: 0 0 1.25rem;
-  font-size: 1.5rem;
-  letter-spacing: -0.01em;
-}
-.legal-card p {
-  margin: 0 0 1rem;
-  line-height: 1.65;
-  color: var(--text);
-}
-.legal-card h2 {
-  margin: 1.75rem 0 0.6rem;
-  font-size: 1.1rem;
-}
-.legal-card ol,
-.legal-card ul {
-  margin: 0 0 1rem;
-  padding-left: 1.3rem;
-}
-.legal-card li {
-  margin-bottom: 0.6rem;
+  font-family: var(--sans);
+  font-size: 1.0625rem;
   line-height: 1.6;
+  background: var(--paper);
+  color: var(--ink);
 }
-.legal-card .updated {
-  margin: 1.5rem 0 0;
-  padding-top: 1rem;
-  border-top: 1px solid var(--border);
-  font-size: 0.85rem;
-  color: var(--muted);
+a { color: var(--blueprint); text-underline-offset: 0.15em; }
+a:hover { color: var(--keystone); }
+h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; }
+img { max-width: 100%; display: block; }
+
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 1.25rem; }
+.narrow { max-width: 680px; }
+
+/* --- Header --- */
+.site-header { border-bottom: 1px solid var(--rule); }
+.site-header .wrap {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; flex-wrap: wrap; padding-top: 1rem; padding-bottom: 1rem;
+}
+.wordmark {
+  font-family: var(--serif); font-size: 1.2rem; font-weight: 600;
+  color: var(--ink); text-decoration: none;
+}
+.site-header nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+.site-header nav a { color: var(--muted); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+.site-header nav a:hover, .site-header nav a[aria-current="page"] { color: var(--ink); }
+.site-header nav a[aria-current="page"] { box-shadow: inset 0 -2px 0 var(--keystone); }
+
+/* --- Hero: grid paper --- */
+.hero {
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 24px 24px;
+  border-bottom: 1px solid var(--rule);
+  padding: 4.5rem 0 4rem;
+}
+.hero h1 { font-size: clamp(2.1rem, 6vw, 3.4rem); margin: 0 0 1rem; max-width: 16ch; }
+.hero .lede { font-size: 1.2rem; color: var(--muted); max-width: 36rem; margin: 0; }
+.eyebrow {
+  font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--keystone); margin: 0 0 0.75rem;
 }
 
-/* --- Shared footer --- */
-footer.site-footer {
-  text-align: center;
-  color: var(--muted);
-  font-size: 0.85rem;
-  padding: 1rem 1.5rem 3rem;
+/* --- Sections --- */
+section { padding: 3.5rem 0; }
+section + section { border-top: 1px solid var(--rule); }
+section h2 { font-size: 1.75rem; margin: 0 0 1.5rem; }
+
+/* Numbered principles, like notebook entries */
+.principles { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.5rem 2.5rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); counter-reset: p; }
+@media (min-width: 760px) { .principles.four { grid-template-columns: repeat(4, 1fr); gap: 1.5rem 1.75rem; } }
+.principles li { counter-increment: p; padding-top: 0.9rem; border-top: 2px solid var(--ink); }
+.principles li::before {
+  content: counter(p, decimal-leading-zero);
+  display: block; font-family: var(--serif); color: var(--keystone); font-size: 0.95rem; margin-bottom: 0.3rem;
 }
-footer.site-footer a { color: inherit; }
-footer.site-footer .footer-nav {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 0.75rem;
-  flex-wrap: wrap;
+.principles strong { display: block; font-family: var(--serif); font-size: 1.2rem; margin-bottom: 0.25rem; }
+.principles span { color: var(--muted); }
+
+/* App cards */
+.apps { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.app {
+  background: var(--surface); border: 1px solid var(--rule); border-radius: 14px;
+  padding: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem;
 }
-footer.site-footer .footer-nav a {
-  color: var(--muted);
-  text-decoration: none;
-  font-weight: 600;
+.app-head { display: flex; align-items: center; gap: 0.9rem; }
+.app-head img { width: 56px; height: 56px; border-radius: 13px; }
+.app h3 { margin: 0; font-size: 1.35rem; }
+.app p { margin: 0; color: var(--muted); }
+.status { font-size: 0.8rem; font-weight: 700; color: var(--keystone); }
+.app .links { margin-top: auto; padding-top: 0.5rem; display: flex; gap: 1rem; flex-wrap: wrap; font-weight: 600; font-size: 0.95rem; }
+
+.button {
+  display: inline-block; background: var(--blueprint); color: var(--paper);
+  padding: 0.65rem 1.2rem; border-radius: 8px; text-decoration: none; font-weight: 600;
 }
-footer.site-footer .footer-nav a:hover { color: var(--text); }
-footer.site-footer .copyright {
-  margin-top: 0.35rem;
-  opacity: 0.75;
+.button:hover { background: var(--keystone); color: #fff; }
+
+/* Prose pages (About, product pages) */
+.prose h1 { font-size: clamp(2rem, 5vw, 2.75rem); margin: 0 0 1.25rem; }
+.prose h2 { font-size: 1.4rem; margin: 2.25rem 0 0.75rem; }
+.prose p, .prose li { margin: 0 0 1rem; }
+.prose ul { padding-left: 1.2rem; }
+.prose .lede { font-size: 1.2rem; color: var(--muted); }
+.callout {
+  border-left: 3px solid var(--keystone); background: var(--surface);
+  padding: 1rem 1.25rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0;
 }
+.callout p:last-child { margin-bottom: 0; }
+
+.product-head { display: flex; align-items: center; gap: 1.25rem; margin-bottom: 1.25rem; }
+.product-head img { width: 88px; height: 88px; border-radius: 20px; }
+.product-head h1 { margin: 0; }
+
+/* --- Legal pages --- */
+.legal-card { padding: 3rem 0 1rem; }
+.legal-card h1 { font-size: 1.9rem; margin: 0 0 1.5rem; }
+.legal-card h2 { font-size: 1.15rem; margin: 2rem 0 0.6rem; }
+.legal-card p, .legal-card li { line-height: 1.65; }
+.legal-card ol, .legal-card ul { padding-left: 1.3rem; }
+.legal-card li { margin-bottom: 0.6rem; }
+.legal-nav { display: flex; gap: 1rem; font-weight: 600; font-size: 0.95rem; margin-bottom: 1.5rem; }
+.legal-nav a[aria-current="page"] { color: var(--ink); text-decoration: none; }
+.updated { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--rule); font-size: 0.9rem; color: var(--muted); }
+
+/* --- Footer --- */
+.site-footer { border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.9rem; padding: 2rem 0 3rem; }
+.site-footer .wrap { display: flex; justify-content: space-between; gap: 1rem 2rem; flex-wrap: wrap; }
+.site-footer p { margin: 0 0 0.35rem; }
+.site-footer a { color: inherit; }
